@@ -1,0 +1,79 @@
+{
+  "scopeName": "source.p2asm",
+  "name": "P2ASM",
+  "fileTypes": ["p2asm", "pasm"],
+  "patterns": [
+    {
+      "match":"(?i)^dat(\\s*'.*)?$",
+      "name":"entity.name.section.p2asm"
+    },
+    {
+      "match":"(?i)orgh?|byte|word|long|res",
+      "name":"keyword.other.directive.p2asm"
+    },
+    {
+      "match":"(?i)and|andn|or",
+      "name":"keyword.operator.logical.p2asm"
+    },
+    {
+      "match":"(?i)shl|shr|rol|ror",
+      "name":"keyword.operator.shifter.p2asm"
+    },
+    {
+      "match":"(?i)add|adds|addsx|sub|subs|subsx|mul|muls",
+      "name":"keyword.operator.math.p2asm"
+    },
+    {
+      "match":"(?i)getb|notb|setb|testb",
+      "name":"keyword.operator.bit.p2asm"
+    },
+    {
+      "match":"(?i)jmp|(djn?[sz])",
+      "name":"keyword.control.branch.p2asm"
+    },
+    {
+      "match":"(?i)coginit",
+      "name":"keyword.control.hubop.p2asm"
+    },
+    {
+      "match":"(?i)cogid|((rd|rf|wf|wr)(byte|long|word))",
+      "name":"keyword.operator.hubop.p2asm"
+    },
+    {
+      "match": "$[_0-9a-fA-F]+",
+      "name": "constant.numeric.hexidecimal.p2asm"
+    },
+    {
+      "match": "[0-9]+\\.?[_0-9]*",
+      "name": "constant.numeric.decimal.psasm"
+    },
+    {
+      "match": "%%[_0-3]+",
+      "name": "constant.numeric.quaternary.p2asm"
+    },
+    {
+      "match": "%[_01]+",
+      "name": "constant.numeric.binary.p2asm"
+    },
+    {
+      "match":"(?i)(dir|in|out|ptr|adr)[ab]",
+      "name":"support.variable.p2asm"
+    },
+    {
+      "match":"(?i)(int|ret)[0-3]",
+      "name":"support.variable.p2asm"
+    },
+    {
+      "match":"[._a-zA-Z][_a-zA-Z0-9]*",
+      "name":"entity.name.tag.p2asm"
+    },
+    {
+      "match":"[#@]+",
+      "name":"storage.modifier.p2asm"
+    },
+    {
+      "match":"'.*$",
+      "name":"comment.line.p2asm"
+    }
+  ]
+}
