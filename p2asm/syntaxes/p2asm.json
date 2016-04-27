@@ -4,7 +4,7 @@
   "fileTypes": ["p2asm", "pasm"],
   "patterns": [
     {
-      "match":"(?i)^dat(\\s*'.*)?$",
+      "match":"(?i)^(con|dat)(\\s*'.*)?$",
       "name":"entity.name.section.p2asm"
     },
     {
@@ -12,32 +12,96 @@
       "name":"keyword.other.directive.p2asm"
     },
     {
-      "match":"(?i)and|andn|or",
+      "match":"(?i)if_([abcez]|n[cez]|[ab]e|n?c_(and|or)_n?z|c_(eq|ne)_z|never|always)",
+      "name":"constant.language.predicate.p2asm"
+    },
+    {
+      "match":"(?i)andn?|x?or|muxn?[cz]|not|test[bn]?",
       "name":"keyword.operator.logical.p2asm"
     },
     {
-      "match":"(?i)shl|shr|rol|ror",
+      "match":"(?i)s[ah][lr]|r[co][lr]",
       "name":"keyword.operator.shifter.p2asm"
     },
     {
-      "match":"(?i)add|adds|addsx|sub|subs|subsx|mul|muls",
+      "match":"(?i)adds?x?|subs?x?|subr|cmp[srm]?|cmpxs?|cmpsub|mins?|maxs?|sumn?[cz]|muls?|abs|neg[cz]?|negn[cz]|(inc|dec)mod",
       "name":"keyword.operator.math.p2asm"
     },
     {
-      "match":"(?i)getb|notb|setb|testb",
+      "match":"(?i)(get|iso|not|any)b|setbn?[cz]?|topon|botone|decod",
       "name":"keyword.operator.bit.p2asm"
     },
     {
-      "match":"(?i)jmp|(djn?[sz])",
+      "match":"(?i)mov|set([dsi]|cz)|rev",
+      "name":"keyword.operator.assignment.p2asm"
+    },
+    {
+      "match":"(?i)setint[1-3]|(get|poll|wait)int|allowi|stalli",
+      "name":"keyword.operator.interrupt.p2asm"
+    },
+    {
+      "match":"(?i)(add|poll|wait)ct[1-3]|waitx",
+      "name":"keyword.operator.counter.p2asm"
+    },
+    {
+      "match":"(?i)(poll|wait)pat|setp[ab][pn]",
+      "name":"keyword.operator.pattern.p2asm"
+    },
+    {
+      "match":"(?i)(poll|set|wait)(edg|hlk)",
+      "name":"keyword.operator.edge.p2asm"
+    },
+    {
+      "match":"(?i)(poll|set|wait)(rdl|wrl)",
+      "name":"keyword.operator.hub.p2asm"
+    },
+    {
+      "match":"(?i)x(init|zero|cont)|(poll|wait)x(mt|fi|ro)|setxfrq|getx(cos|sin)",
+      "name":"keyword.operator.streamer.p2asm"
+    },
+    {
+      "match":"(?i)setdacs",
+      "name":"keyword.operator.dac.p2asm"
+    },
+    {
+      "match":"(?i)jmp|djn?[sz]|rep",
       "name":"keyword.control.branch.p2asm"
+    },
+    {
+      "match":"(?i)loc",
+      "name":"keyword.operator.addressing.p2asm"
+    },
+    {
+      "match":"(?i)call|ret|push|pop",
+      "name":"keyword.operator.stack.p2asm"
     },
     {
       "match":"(?i)coginit",
       "name":"keyword.control.hubop.p2asm"
     },
     {
-      "match":"(?i)cogid|((rd|rf|wf|wr)(byte|long|word))",
+      "match":"(?i)(wr|rd)lut|(poll|wait)rle",
+      "name":"keyword.operator.lut.p2asm"
+    },
+    {
+      "match":"(?i)cogid|(rd|wr)(byte|long|word)|wmlong",
       "name":"keyword.operator.hubop.p2asm"
+    },
+    {
+      "match":"(?i)fblock|(rf|wf)(byte|long|word)|(poll|wait)fbw",
+      "name":"keyword.operator.fastblock.p2asm"
+    },
+    {
+      "match":"(?i)q(div|exp|frac|log|mul|rotate|sqrt|vector)|getq[xy]",
+      "name":"keyword.operator.cordic.p2asm"
+    },
+    {
+      "match":"(?i)pin(ack|getz|set[mxy])",
+      "name":"keyword.operator.smartpin.p2asm"
+    },
+    {
+      "match":"(?i)aug[ds]|alt[irds]|setq2?",
+      "name":"keyword.operator.modifier.p2asm"
     },
     {
       "match": "$[_0-9a-fA-F]+",
@@ -60,15 +124,15 @@
       "name":"support.variable.p2asm"
     },
     {
-      "match":"(?i)(int|ret)[0-3]",
+      "match":"(?i)(ijmp|iret)[1-3]",
       "name":"support.variable.p2asm"
     },
     {
-      "match":"[._a-zA-Z][_a-zA-Z0-9]*",
+      "match":"\\b\\.?[_a-zA-Z][_a-zA-Z0-9]*\\b",
       "name":"entity.name.tag.p2asm"
     },
     {
-      "match":"[#@]+",
+      "match":"(#[#\\\\@]?|\\bw[cz]\\b",
       "name":"storage.modifier.p2asm"
     },
     {
