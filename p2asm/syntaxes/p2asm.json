@@ -1,4 +1,4 @@
-{
+ {
   "scopeName": "source.p2asm",
   "name": "P2ASM",
   "fileTypes": ["p2asm", "pasm"],
@@ -32,15 +32,19 @@
       "name":"keyword.operator.bit.p2asm"
     },
     {
+      "match":"(?i)(get|rol|set)(byte|nib|word)|(set_mov)byts|(split|merge)[bw]|seuss[fr]",
+      "name":"keyword.operator.nbw.p2asm"
+    },
+    {
       "match":"(?i)mov|set([dsi]|cz)|rev",
       "name":"keyword.operator.assignment.p2asm"
     },
     {
-      "match":"(?i)setint[1-3]|(get|poll|wait)int|allowi|stalli",
+      "match":"(?i)setint[1-3]|(get|poll|wait)int|allowi|stalli|setbrk",
       "name":"keyword.operator.interrupt.p2asm"
     },
     {
-      "match":"(?i)(add|poll|wait)ct[1-3]|waitx",
+      "match":"(?i)(add|poll|wait)ct[1-3]|waitx|getcnt",
       "name":"keyword.operator.counter.p2asm"
     },
     {
@@ -64,7 +68,11 @@
       "name":"keyword.operator.dac.p2asm"
     },
     {
-      "match":"(?i)jmp|djn?[sz]|rep",
+      "match":"(?i)setc([iqy]|frq|mod)",
+      "name":"keyword.operator.color.p2asm"
+    },
+    {
+      "match":"(?i)jmp(rel)?|[dt]jn?[psz]|rep|call[abd]|ret[ab]",
       "name":"keyword.control.branch.p2asm"
     },
     {
@@ -76,7 +84,7 @@
       "name":"keyword.operator.stack.p2asm"
     },
     {
-      "match":"(?i)coginit",
+      "match":"(?i)cog(init|stop)|clkset|lock(clr|new|ret|set)",
       "name":"keyword.control.hubop.p2asm"
     },
     {
@@ -88,7 +96,7 @@
       "name":"keyword.operator.hubop.p2asm"
     },
     {
-      "match":"(?i)fblock|(rf|wf)(byte|long|word)|(poll|wait)fbw",
+      "match":"(?i)fblock|(rf|wf)(byte|long|word)|(poll|wait)fbw|(rd|wr)fast",
       "name":"keyword.operator.fastblock.p2asm"
     },
     {
