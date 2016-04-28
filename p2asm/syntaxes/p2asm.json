@@ -1,114 +1,118 @@
- {
+{
   "scopeName": "source.p2asm",
   "name": "P2ASM",
   "fileTypes": ["p2asm", "pasm"],
   "patterns": [
     {
-      "match":"(?i)^(con|dat)(\\s*'.*)?$",
+      "match":"(?i)^(con|dat)\\s*('.*)?$",
       "name":"entity.name.section.p2asm"
     },
     {
-      "match":"(?i)orgh?|byte|word|long|res",
+      "match":"(?i)\\b(orgh?|byte|word|long|res)\\b",
       "name":"keyword.other.directive.p2asm"
     },
     {
-      "match":"(?i)if_([abcez]|n[cez]|[ab]e|n?c_(and|or)_n?z|c_(eq|ne)_z|never|always)",
+      "match":"(?i)\\b(if_(n?c_(and|or)_n?z|c_(eq|ne)_z|n[cez]|[ab]e?|[cez])|never|always)\\b",
       "name":"constant.language.predicate.p2asm"
     },
     {
-      "match":"(?i)andn?|x?or|muxn?[cz]|not|test[bn]?",
+      "match":"(?i)\\b(andn?|x?or|muxn?[cz]|not|test[bn]?)\\b",
       "name":"keyword.operator.logical.p2asm"
     },
     {
-      "match":"(?i)s[ah][lr]|r[co][lr]",
+      "match":"(?i)\\b(s[ah][lr]|r[co][lr])\\b",
       "name":"keyword.operator.shifter.p2asm"
     },
     {
-      "match":"(?i)adds?x?|subs?x?|subr|cmp[srm]?|cmpxs?|cmpsub|mins?|maxs?|sumn?[cz]|muls?|abs|neg[cz]?|negn[cz]|(inc|dec)mod",
+      "match":"(?i)\\b(adds?x?|subs?x?|subr|cmp[srm]?|cmpxs?|cmpsub|mins?|maxs?|sumn?[cz]|muls?|abs|neg[cz]?|negn[cz]|(inc|dec)mod)\\b",
       "name":"keyword.operator.math.p2asm"
     },
     {
-      "match":"(?i)(get|iso|not|any)b|setbn?[cz]?|topon|botone|decod",
+      "match":"(?i)\\b((get|iso|not|any)b|setbn?[cz]?|(bot|top)one|decod)\\b",
       "name":"keyword.operator.bit.p2asm"
     },
     {
-      "match":"(?i)(get|rol|set)(byte|nib|word)|(set_mov)byts|(split|merge)[bw]|seuss[fr]",
+      "match":"(?i)\\b((get|rol|set)(byte|nib|word)|(set|mov)byts|(split|merge)[bw]|seuss[fr])\\b",
       "name":"keyword.operator.nbw.p2asm"
     },
     {
-      "match":"(?i)mov|set([dsi]|cz)|rev",
+      "match":"(?i)\\b(mov|set([dsi]|cz)|rev)\\b",
       "name":"keyword.operator.assignment.p2asm"
     },
     {
-      "match":"(?i)setint[1-3]|(get|poll|wait)int|allowi|stalli|setbrk",
+      "match":"(?i)\\b(setint[1-3]|(get|poll|wait)int|allowi|stalli|setbrk)\\b",
       "name":"keyword.operator.interrupt.p2asm"
     },
     {
-      "match":"(?i)(add|poll|wait)ct[1-3]|waitx|getcnt",
+      "match":"(?i)\\b((add|poll|wait)ct[1-3]|waitx|getcnt)\\b",
       "name":"keyword.operator.counter.p2asm"
     },
     {
-      "match":"(?i)(poll|wait)pat|setp[ab][pn]",
+      "match":"(?i)\\b((poll|wait)pat|setp[ab][pn])\\b",
       "name":"keyword.operator.pattern.p2asm"
     },
     {
-      "match":"(?i)(poll|set|wait)(edg|hlk)",
+      "match":"(?i)\\b(poll|set|wait)(edg|hlk)\\b",
       "name":"keyword.operator.edge.p2asm"
     },
     {
-      "match":"(?i)(poll|set|wait)(rdl|wrl)",
+      "match":"(?i)\\b(poll|set|wait)(rdl|wrl)\\b",
       "name":"keyword.operator.hub.p2asm"
     },
     {
-      "match":"(?i)x(init|zero|cont)|(poll|wait)x(mt|fi|ro)|setxfrq|getx(cos|sin)",
+      "match":"(?i)\\b(x(init|zero|cont)|(poll|wait)x(mt|fi|ro)|setxfrq|getx(cos|sin))\\b",
       "name":"keyword.operator.streamer.p2asm"
     },
     {
-      "match":"(?i)setdacs",
+      "match":"(?i)\\bsetdacs\\b",
       "name":"keyword.operator.dac.p2asm"
     },
     {
-      "match":"(?i)setc([iqy]|frq|mod)",
+      "match":"(?i)\\bsetc([iqy]|frq|mod)\\b",
       "name":"keyword.operator.color.p2asm"
     },
     {
-      "match":"(?i)jmp(rel)?|[dt]jn?[psz]|rep|call[abd]|ret[ab]",
+      "match":"(?i)\\b(jmp(rel)?|[dt]jn?[psz]|rep|call[abd]|ret[ab])\\b",
       "name":"keyword.control.branch.p2asm"
     },
     {
-      "match":"(?i)loc",
+      "match":"(?i)\\bloc\\b",
       "name":"keyword.operator.addressing.p2asm"
     },
     {
-      "match":"(?i)call|ret|push|pop",
+      "match":"(?i)\\b(call|ret|push|pop)\\b",
       "name":"keyword.operator.stack.p2asm"
     },
     {
-      "match":"(?i)cog(init|stop)|clkset|lock(clr|new|ret|set)",
-      "name":"keyword.control.hubop.p2asm"
-    },
-    {
-      "match":"(?i)(wr|rd)lut|(poll|wait)rle",
+      "match":"(?i)\\b((wr|rd)lut|(poll|wait)rle)\\b",
       "name":"keyword.operator.lut.p2asm"
     },
     {
-      "match":"(?i)cogid|(rd|wr)(byte|long|word)|wmlong",
+      "match":"(?i)\\b(cog(init|stop)|clkset)\\b",
       "name":"keyword.operator.hubop.p2asm"
     },
     {
-      "match":"(?i)fblock|(rf|wf)(byte|long|word)|(poll|wait)fbw|(rd|wr)fast",
+      "match":"(?i)\\block(clr|new|ret|set)\\b",
+      "name":"keyword.operator.hubop.lock.p2asm"
+    },
+    {
+      "match":"(?i)\\b(cogid|(rd|wr)(byte|long|word)|wmlong)\\b",
+      "name":"keyword.operator.hubop.ram.p2asm"
+    },
+    {
+      "match":"(?i)\\b(fblock|(rf|wf)(byte|long|word)|(poll|wait)fbw|(rd|wr)fast)\\b",
       "name":"keyword.operator.fastblock.p2asm"
     },
     {
-      "match":"(?i)q(div|exp|frac|log|mul|rotate|sqrt|vector)|getq[xy]",
+      "match":"(?i)\\b(q(div|exp|frac|log|mul|rotate|sqrt|vector)|getq[xy])\\b",
       "name":"keyword.operator.cordic.p2asm"
     },
     {
-      "match":"(?i)pin(ack|getz|set[mxy])",
+      "match":"(?i)\\bpin(ack|getz|set[mxy])\\b",
       "name":"keyword.operator.smartpin.p2asm"
     },
     {
-      "match":"(?i)aug[ds]|alt[irds]|setq2?",
+      "match":"(?i)\\b(aug[ds]|alt[irds]|setq2?)\\b",
       "name":"keyword.operator.modifier.p2asm"
     },
     {
@@ -128,20 +132,20 @@
       "name": "constant.numeric.binary.p2asm"
     },
     {
-      "match":"(?i)(dir|in|out|ptr|adr)[ab]",
+      "match":"(?i)\\b(dir|in|out|ptr|adr)[ab]\\b",
       "name":"support.variable.p2asm"
     },
     {
-      "match":"(?i)(ijmp|iret)[1-3]",
+      "match":"(?i)\\b(ijmp|iret)[1-3]\\b",
       "name":"support.variable.p2asm"
+    },
+    {
+      "match":"#[#\\\\@]?|\\bw[cz]\\b",
+      "name":"storage.modifier.p2asm"
     },
     {
       "match":"\\b\\.?[_a-zA-Z][_a-zA-Z0-9]*\\b",
       "name":"entity.name.tag.p2asm"
-    },
-    {
-      "match":"(#[#\\\\@]?|\\bw[cz]\\b",
-      "name":"storage.modifier.p2asm"
     },
     {
       "match":"'.*$",
