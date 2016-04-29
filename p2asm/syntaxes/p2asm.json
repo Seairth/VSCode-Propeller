@@ -68,6 +68,10 @@
       "name":"keyword.operator.dac.p2asm"
     },
     {
+      "match":"(?i)\\b((add|bln|mix|mul)pix|setpi[vx]|rgb(sqz|exp))\\b",
+      "name":"keyword.operator.pixel.p2asm"
+    },
+    {
       "match":"(?i)\\bsetc([iqy]|frq|mod)\\b",
       "name":"keyword.operator.color.p2asm"
     },
