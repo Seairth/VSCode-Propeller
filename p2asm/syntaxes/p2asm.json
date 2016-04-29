@@ -4,7 +4,7 @@
   "fileTypes": ["p2asm", "pasm"],
   "patterns": [
     {
-      "match":"(?i)^(con|dat)\\s*('.*)?$",
+      "match":"(?i)^(con|dat)\\b",
       "name":"entity.name.section.p2asm"
     },
     {
@@ -28,7 +28,7 @@
       "name":"keyword.operator.math.p2asm"
     },
     {
-      "match":"(?i)\\b((get|iso|not|any)b|setbn?[cz]?|(bot|top)one|decod)\\b",
+      "match":"(?i)\\b((get|iso|not|any|clr)b|setbn?[cz]?|(bot|top)one|decod)\\b",
       "name":"keyword.operator.bit.p2asm"
     },
     {
@@ -80,16 +80,12 @@
       "name":"keyword.operator.color.p2asm"
     },
     {
-      "match":"(?i)\\b(jmp(rel)?|[dt]jn?[psz]|rep|call[abd]|ret[ab])\\b",
+      "match":"(?i)\\b(jmp(rel)?|[dt]jn?[psz]|rep|call[abd]?|ret[ab]?)\\b",
       "name":"keyword.control.branch.p2asm"
     },
     {
-      "match":"(?i)\\bloc\\b",
+      "match":"(?i)\\b(loc|push|pop)\\b",
       "name":"keyword.operator.addressing.p2asm"
-    },
-    {
-      "match":"(?i)\\b(call|ret|push|pop)\\b",
-      "name":"keyword.operator.stack.p2asm"
     },
     {
       "match":"(?i)\\b((wr|rd)lut|(poll|wait)rle)\\b",
