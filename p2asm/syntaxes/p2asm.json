@@ -24,7 +24,7 @@
       "name":"keyword.operator.shifter.p2asm"
     },
     {
-      "match":"(?i)\\b(adds?x?|subs?x?|subr|cmp[srm]?|cmpxs?|cmpsub|mins?|maxs?|sumn?[cz]|muls?|abs|neg[cz]?|negn[cz]|(inc|dec)mod)\\b",
+      "match":"(?i)\\b(adds?x?|subs?x?|subr|cmp[srm]?|cmpxs?|cmpsub|mins?|maxs?|sumn?[cz]|muls?|sclu?|abs|neg[cz]?|negn[cz]|(inc|dec)mod)\\b",
       "name":"keyword.operator.math.p2asm"
     },
     {
@@ -32,8 +32,12 @@
       "name":"keyword.operator.bit.p2asm"
     },
     {
-      "match":"(?i)\\b((get|rol|set)(byte|nib|word)|(set|mov)byts|(split|merge)[bw]|seuss[fr])\\b",
+      "match":"(?i)\\b((get|rol|set)(byte|nib|word)|(set|mov)byts|(split|merge)[bw])\\b",
       "name":"keyword.operator.nbw.p2asm"
+    },
+    {
+      "match":"(?i)\\b(getrnd|seuss[fr])\\b",
+      "name":"keyword.operator.misc.p2asm"
     },
     {
       "match":"(?i)\\b(mov|set([dsi]|cz)|rev)\\b",
@@ -44,7 +48,7 @@
       "name":"keyword.operator.interrupt.p2asm"
     },
     {
-      "match":"(?i)\\b((add|poll|wait)ct[1-3]|waitx|getcnt)\\b",
+      "match":"(?i)\\b((add|poll|wait)ct[1-3]|waitx|getct)\\b",
       "name":"keyword.operator.counter.p2asm"
     },
     {
@@ -60,7 +64,7 @@
       "name":"keyword.operator.hub.p2asm"
     },
     {
-      "match":"(?i)\\b(x(init|zero|cont)|(poll|wait)x(mt|fi|ro)|setxfrq|getx(cos|sin))\\b",
+      "match":"(?i)\\b(x(init|stop|zero|cont)|(poll|wait)x(mt|fi|ro)|setxfrq|getx(cos|sin))\\b",
       "name":"keyword.operator.streamer.p2asm"
     },
     {
@@ -104,7 +108,7 @@
       "name":"keyword.operator.hubop.ram.p2asm"
     },
     {
-      "match":"(?i)\\b(fblock|(rf|wf)(byte|long|word)|(poll|wait)fbw|(rd|wr)fast)\\b",
+      "match":"(?i)\\b(fblock|(rf|wf)(byte|long|word)|(poll|wait)fbw|(rd|wr)fast|getptr)\\b",
       "name":"keyword.operator.fastblock.p2asm"
     },
     {
