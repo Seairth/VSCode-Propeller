@@ -1,0 +1,37 @@
+{
+    "name": "spin",
+    "displayName": "Spin",
+    "description": "Parallax Propeller Spin language support",
+    "version": "0.0.1",
+    "publisher": "seairth",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": ["Languages"],
+    "activationEvents": [
+        "onLanguage:spin"
+    ],
+    "main": "./out/src/extension.js",
+    "contributes": {
+        "languages": [{
+            "id": "spin",
+            "aliases": ["Spin", "SPIN"],
+            "extensions": [".spin"],
+            "configuration": "./spin.configuration.json"
+        }],
+        "grammars": [{
+            "language": "spin",
+            "scopeName": "source.spin",
+            "path": "./syntaxes/spin.json"
+        }]
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0"
+    }
+}
