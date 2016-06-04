@@ -44,7 +44,7 @@
           "include":"#comments"
         },
         {
-          "match":"(?i)\\b(orgh?|byte|word|long|res)\\b",
+          "match":"(?i)\\b(org[fh]?|byte|word|long|res|fit|align[lw])\\b",
           "name":"keyword.other.directive.p2asm"
         },
         {
@@ -72,7 +72,7 @@
           "name":"keyword.operator.nbw.p2asm"
         },
         {
-          "match":"(?i)\\b(getrnd|seuss[fr])\\b",
+          "match":"(?i)\\b(getrnd|seuss[fr]|nop)\\b",
           "name":"keyword.operator.misc.p2asm"
         },
         {
@@ -100,7 +100,11 @@
           "name":"keyword.operator.hub.p2asm"
         },
         {
-          "match":"(?i)\\b(x(init|stop|zero|cont)|(poll|wait)x(mt|fi|ro)|setxfrq|getx(cos|sin))\\b",
+          "match":"(?i)\\b(cog|poll|wait)atn\\b",
+          "name":"keyword.operator.hub.p2asm"
+        },
+        {
+          "match":"(?i)\\b(x(init|stop|zero|cont)|(poll|wait)x(mt|fi|r[lo])|setxfrq|getx(cos|sin))\\b",
           "name":"keyword.operator.streamer.p2asm"
         },
         {
@@ -116,15 +120,15 @@
           "name":"keyword.operator.color.p2asm"
         },
         {
-          "match":"(?i)\\b(jmp(rel)?|[dt]jn?[psz]|rep|call[abd]?|ret[ab]?)\\b",
+          "match":"(?i)\\b(jmp(rel)?|[dt]jn?[sz]|jn?p|rep|call[abd]?|ret[ab]?|re[st]i[0-3])\\b",
           "name":"keyword.control.branch.p2asm"
         },
         {
-          "match":"(?i)\\b(loc|push|pop)\\b",
+          "match":"(?i)\\b(loc|(push|pop)[ab]?)\\b",
           "name":"keyword.operator.addressing.p2asm"
         },
         {
-          "match":"(?i)\\b((wr|rd)lut|(poll|wait)rle)\\b",
+          "match":"(?i)\\b(wr|rd|set)lut\\b",
           "name":"keyword.operator.lut.p2asm"
         },
         {
@@ -144,11 +148,11 @@
           "name":"keyword.operator.fastblock.p2asm"
         },
         {
-          "match":"(?i)\\b(q(div|exp|frac|log|mul|rotate|sqrt|vector)|getq[xy])\\b",
+          "match":"(?i)\\b(q(div|exp|frac|log|mul|rotate|sqrt|vector)|getq[xy]|pollqmt)\\b",
           "name":"keyword.operator.cordic.p2asm"
         },
         {
-          "match":"(?i)\\bpin(ack|getz|set[mxy])\\b",
+          "match":"(?i)\\b(ak|rd|w[rxy])pin\\b",
           "name":"keyword.operator.smartpin.p2asm"
         },
         {
